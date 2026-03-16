@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Work+Serif:wght@500&display=swap");
+
+:root {
+  --bg: #f4f1ec;
+  --bg-accent: #e3d7c6;
+  --card: #fff8f1;
+  --text: #2e2a27;
+  --muted: #6e6258;
+  --primary: #a85d2f;
+  --primary-dark: #874324;
+  --accent: #e5b35a;
+  --border: rgba(46, 42, 39, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, #fff6e7, var(--bg));
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.5rem;
+  font-family: "Work Serif", serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: #1f1915;
+  color: #f8efe7;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.brand-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.brand-subtitle {
+  font-size: 0.85rem;
+  color: #c6b4a4;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  color: #e8ded4;
+}
+
+.nav a.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff3e3;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header p {
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+}
+
+.card.accent {
+  background: linear-gradient(135deg, #fff2de, #ffe6b5);
+}
+
+.form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  color: #b12b2b;
+  background: #ffe5e5;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+}
+
+.message {
+  color: #1f5f3f;
+  background: #e0f5e8;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+}
+
+.loading {
+  color: var(--muted);
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: min(420px, 100%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.auth-toggle {
+  display: flex;
+  background: #f1e6d8;
+  border-radius: 999px;
+  padding: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-toggle button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.auth-toggle button.active {
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+    flex-direction: row;
+  }
+
+  .main-content {
+    padding: 1.5rem;
+  }
+}
